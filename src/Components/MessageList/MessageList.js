@@ -7,7 +7,7 @@ function MessageList() {
     fetch("https://twitterclonewbs.herokuapp.com/messages")
       .then((response) => response.json())
       .then((json) => {
-        //console.log(json);
+        console.log(json);
         setMessages(json);
       })
       .catch((e) => console.log("Request failed: " + e));
@@ -19,3 +19,4 @@ function MessageList() {
 }
 
 export default MessageList;
+

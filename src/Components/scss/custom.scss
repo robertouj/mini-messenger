@@ -1,0 +1,18 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+$theme-colors: (
+  "primary": blue,
+  "secondary": brown,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+);
+
+
+/* finally, import Bootstrap */
+@import "bootstrap";
