@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Switch, Route } from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar";
 import LeftMenu from "../LeftMenu/LeftMenu";
@@ -7,23 +7,25 @@ import MessageList from "../MessageList/MessageList";
 import RightMenu from "../RightMenu/RightMenu";
 
 function Home() {
+  const [items, setItems] = useState([]);
+
   return (
     <div>
       <label>Search By Name</label>
+      <SearchBar newitems={items}/>
+      <LeftMenu />
       <Switch>
-        <Route path="/:userName/message/:id">
-          <SearchBar />
-          <LeftMenu />
+        {/*<Route path="/:userName/message/:id">*/}
+        <Route path="/message/:id">
+          Messageview
           <MessageView />
-          <RightMenu />
         </Route>
-        <Route path="/:userName">
-          <SearchBar />
-          <LeftMenu />
+        <Route path="/">
+          Masagge
           <MessageList />
-          <RightMenu />
         </Route>
       </Switch>
+      <RightMenu />
     </div>
   );
 }
